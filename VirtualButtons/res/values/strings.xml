@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">VirtualButtons</string>
+	<string name="app_description">QCAR VirtualButtons Sample Application</string>
+	<string name="menu_red">Toggle Red</string>
+	<string name="menu_blue">Toggle Blue</string>
+	<string name="menu_yellow">Toggle Yellow</string>
+	<string name="menu_green">Toggle Green</string>
+</resources>

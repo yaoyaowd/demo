@@ -1,0 +1,7 @@
+package com.demo;
+
+import android.opengl.GLSurfaceView;
+
+public class QCARSampleGLView extends GLSurfaceView{
+	
+}

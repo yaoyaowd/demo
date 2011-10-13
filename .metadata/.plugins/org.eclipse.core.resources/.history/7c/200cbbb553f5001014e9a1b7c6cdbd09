@@ -1,0 +1,13 @@
+package com.demo;
+
+import android.content.Context;
+import android.opengl.GLSurfaceView;
+
+public class QCARSampleGLView extends GLSurfaceView{
+
+	public QCARSampleGLView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+	
+}

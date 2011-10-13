@@ -1,0 +1,35 @@
+package com.demo;
+
+import com.qualcomm.QCAR.QCAR;
+
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+
+import android.content.Context;
+import android.graphics.PixelFormat;
+import android.opengl.GLSurfaceView;
+
+public class QCARSampleGLView extends GLSurfaceView{
+
+	private static boolean mUseOpenGLES2 = true;
+	
+	public QCARSampleGLView(Context context) {
+		super(context);
+	}
+	
+	public void init(int flags, boolean translucent, int depth, int stencil)
+    {
+        mUseOpenGLES2 = (flags & QCAR.GL_20) != 0;
+        if (translucent)
+        {
+            this.getHolder().setFormat(PixelFormat.TRANSLUCENT);
+        }
+        setEGLContextFactory(new ContextFactory());
+        setEGLConfigChooser( translucent ?
+        		new ConfigChooser(8, 8, 8, 8, depth, stencil) :
+        	new ConfigChooser(5, 6, 5, 0, depth, stencil) );
+    }
+	
+}

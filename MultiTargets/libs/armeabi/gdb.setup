@@ -1,0 +1,2 @@
+set solib-search-path D:/Train/Development/qcar-android-1-0-6/samples/MultiTargets/obj/local/armeabi
+directory D:/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include D:/Train/Development/Android/android-ndk-r6b/sources/cxx-stl/system/include D:/Train/Development/qcar-android-1-0-6/samples/MultiTargets/jni/../../../build/include

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dominoes</string>
+    <string name="app_description">QCAR Dominoes Sample Application</string>
+<string name="button_start">Run</string>
+<string name="button_reset">Reset</string>
+<string name="button_clear">Clear</string>
+<string name="button_delete">Delete</string>
+</resources>
