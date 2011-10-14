@@ -81,7 +81,7 @@ LOCAL_SHARED_LIBRARIES := QCAR-prebuilt
 # not list header and included files here, because the build system will
 # compute dependencies automatically for you; just list the source files
 # that will be passed directly to a compiler, and you should be good.
-LOCAL_SRC_FILES := TargetDemo.cpp SampleUtils.cpp Texture.cpp
+LOCAL_SRC_FILES := TargetDemo.cpp SampleUtils.cpp Texture.cpp SampleMath.cpp
 
 # By default, ARM target binaries will be generated in 'thumb' mode, where
 # each instruction are 16-bit wide. You can define this variable to 'arm'

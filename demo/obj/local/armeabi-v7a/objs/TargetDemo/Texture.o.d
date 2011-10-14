@@ -1,8 +1,7 @@
-/cygdrive/d/Train/YahooHack/demo/obj/local/armeabi-v7a/objs/TargetDemo/Texture.o: \
- /cygdrive/d/Train/YahooHack/demo/jni/Texture.cpp \
- /cygdrive/d/Train/YahooHack/demo/jni/Texture.h \
+/cygdrive/d/Train/demo/demo/obj/local/armeabi-v7a/objs/TargetDemo/Texture.o: \
+ /cygdrive/d/Train/demo/demo/jni/Texture.cpp /cygdrive/d/Train/demo/demo/jni/Texture.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/jni.h \
- /cygdrive/d/Train/YahooHack/demo/jni/SampleUtils.h \
+ /cygdrive/d/Train/demo/demo/jni/SampleUtils.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/stdio.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/sys/cdefs.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -22,11 +21,11 @@
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/string.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/malloc.h
 
-/cygdrive/d/Train/YahooHack/demo/jni/Texture.h:
+/cygdrive/d/Train/demo/demo/jni/Texture.h:
 
 /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/jni.h:
 
-/cygdrive/d/Train/YahooHack/demo/jni/SampleUtils.h:
+/cygdrive/d/Train/demo/demo/jni/SampleUtils.h:
 
 /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/stdio.h:
 

@@ -7,17 +7,16 @@ import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Toast;
-//import java.util.Vector;
+import java.util.Vector;
 import com.qualcomm.QCAR.QCAR;
 
 public class TargetDemo extends Activity {
@@ -40,6 +39,7 @@ public class TargetDemo extends Activity {
     private QCARSampleGLView mGlView;
     // Our renderer:
     private ImageTargetsRenderer mRenderer;
+    private GUIManager mGUIManager;
 
     // Display size of the device
     private int mScreenWidth = 0;
@@ -50,7 +50,7 @@ public class TargetDemo extends Activity {
     // QCAR initialization flags
     private int mQCARFlags = 0;
     // The textures we will use for rendering:
-    //private Vector<Texture> mTextures;
+    private Vector<Texture> mTextures;
 
     /** Static initializer block to load native libraries on start-up. */
     static
@@ -175,51 +175,23 @@ public class TargetDemo extends Activity {
             // Done loading the tracker, update application status: 
             updateApplicationStatus(APPSTATUS_INITED);
         }
-    }
-    
-    private Handler mainActivityHandler;
-    private boolean displayed = false;
-    
+    }    
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mTextures = new Vector<Texture>();
-        //loadTextures()
-        displayed = false;
-        mainActivityHandler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                    case 1:
-                    	if (!displayed) {
-                    		String text = (String) msg.obj;
-                    		int duration = Toast.LENGTH_LONG;
-                    		Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-                    		toast.show();
-                    		displayed = true;
-                    	}
-                    	break;
-                }
-            }
-        };
+        mTextures = new Vector<Texture>();
+        loadTextures();
         mQCARFlags = getInitializationFlags();
         updateApplicationStatus(APPSTATUS_INIT_APP);
-    }
-    
-    public void sendThreadSafeGUIMessage(Message message) {
-    	mainActivityHandler.sendMessage(message);
     }
 
     /** We want to load specific textures from the APK, which we will later
     use for rendering. */
-    /*private void loadTextures()
+    private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotBrass.png",
-                                                 getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotBlue.png",
-                                                 getAssets()));
-    }*/
+        mTextures.add(Texture.loadTextureFromApk("button.png", getAssets()));
+    }
 
     /** Configure QCAR with the desired version of OpenGL ES. */
     private int getInitializationFlags()
@@ -232,13 +204,11 @@ public class TargetDemo extends Activity {
         return flags;
     }    
 
-   /** Called when the activity will start interacting with the user.*/
     protected void onResume()
     {
         super.onResume();
         // QCAR-specific resume operation
         QCAR.onResume();
-        displayed = false;
         // We may start the camera only if the QCAR SDK has already been 
         // initialized
         if (mAppStatus == APPSTATUS_CAMERA_STOPPED)
@@ -250,16 +220,16 @@ public class TargetDemo extends Activity {
             mGlView.onResume();
         }        
     }
-    /** Called when the system is about to start resuming a previous activity.*/
+    
     protected void onPause()
     {
+    	//onDestroy();
         super.onPause();
         if (mGlView != null)
         {
             mGlView.setVisibility(View.INVISIBLE);
             mGlView.onPause();
         }
-        displayed = true;
         // QCAR-specific pause operation
         QCAR.onPause();
         if (mAppStatus == APPSTATUS_CAMERA_RUNNING)
@@ -276,7 +246,6 @@ public class TargetDemo extends Activity {
             mInitQCARTask.cancel(true);
             mInitQCARTask = null;
         }
-        displayed = true;
         if (mLoadTrackerTask != null &&
             mLoadTrackerTask.getStatus() != LoadTrackerTask.Status.FINISHED)
         {
@@ -286,8 +255,10 @@ public class TargetDemo extends Activity {
         // Do application deinitialization in native code
         deinitApplicationNative();
         // Unload texture
-        //mTextures.clear();
-        //mTextures = null;
+        if (mTextures != null) {
+        	mTextures.clear();
+        	mTextures = null;
+        }
         // Deinitialize QCAR SDK
         QCAR.deinit();
         System.gc();
@@ -374,6 +345,9 @@ public class TargetDemo extends Activity {
                             addContentView(mGlView, new LayoutParams(
                                             LayoutParams.FILL_PARENT,
                                             LayoutParams.FILL_PARENT));
+                            addContentView(mGUIManager.getOverlayView(), new LayoutParams(
+                                    LayoutParams.FILL_PARENT,
+                                    LayoutParams.FILL_PARENT));
                             // Start the camera:
                             updateApplicationStatus(APPSTATUS_CAMERA_RUNNING);
                         }
@@ -426,7 +400,8 @@ public class TargetDemo extends Activity {
         mGlView.init(mQCARFlags, translucent, depthSize, stencilSize);
         mRenderer = new ImageTargetsRenderer();
         mGlView.setRenderer(mRenderer);
-        mRenderer.setMainActivity(this);
+        mGUIManager = new GUIManager(getApplicationContext());
+        mRenderer.setMainActivity(mGUIManager);
     }
 
     /** Invoked the first time when the options menu is displayed to give
@@ -484,15 +459,15 @@ public class TargetDemo extends Activity {
     private native boolean setFocusMode(int mode);
     
     /** Returns the number of registered textures. */
-    /*public int getTextureCount()
+    public int getTextureCount()
     {
         return mTextures.size();
-    }*/
+    }
     /** Returns the texture object at the specified index. */
-    /*public Texture getTexture(int i)
+    public Texture getTexture(int i)
     {
         return mTextures.elementAt(i);
-    }*/
+    }
 
     /** A helper for loading native libraries stored in "libs/armeabi*". */
     public static boolean loadLibrary(String nLibName)
@@ -519,7 +494,7 @@ public class TargetDemo extends Activity {
      * Returns 1 for OpenGl ES 1.1, returns 2 for OpenGl ES 2.0. */
     public native int getOpenGlEsVersionNative();
     /** Native sample initialization. */
-    public native void onQCARInitializedNative();    
+    public native void onQCARInitializedNative();
     /** Native methods for starting and stoping the camera. */ 
     private native void startCamera();
     private native void stopCamera();
@@ -527,4 +502,26 @@ public class TargetDemo extends Activity {
     private native void deinitApplicationNative();
     /** Tells native code whether we are in portait or landscape mode */
     private native void setActivityPortraitMode(boolean isPortrait);
+    
+    /** Native function to receive touch events. */
+    public native void nativeTouchEvent(float x, float y);
+    
+    /** Send touch events to native. */
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        int action = event.getAction();
+        int actionType = -1;
+        switch (action & MotionEvent.ACTION_MASK) {
+            case MotionEvent.ACTION_DOWN:
+                actionType = 0;
+                break;
+        }
+        if (actionType == 0) {
+        	float x = event.getX();
+        	float y = event.getY();
+        	nativeTouchEvent(x, y);
+        }
+        return true;
+    }
 }

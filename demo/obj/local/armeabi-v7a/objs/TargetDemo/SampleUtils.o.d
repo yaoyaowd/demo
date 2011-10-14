@@ -1,6 +1,6 @@
-/cygdrive/d/Train/YahooHack/demo/obj/local/armeabi-v7a/objs/TargetDemo/SampleUtils.o: \
- /cygdrive/d/Train/YahooHack/demo/jni/SampleUtils.cpp \
- /cygdrive/d/Train/YahooHack/demo/jni/SampleUtils.h \
+/cygdrive/d/Train/demo/demo/obj/local/armeabi-v7a/objs/TargetDemo/SampleUtils.o: \
+ /cygdrive/d/Train/demo/demo/jni/SampleUtils.cpp \
+ /cygdrive/d/Train/demo/demo/jni/SampleUtils.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/stdio.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/sys/cdefs.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -35,7 +35,7 @@
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/KHR/khrplatform.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/GLES2/gl2ext.h
 
-/cygdrive/d/Train/YahooHack/demo/jni/SampleUtils.h:
+/cygdrive/d/Train/demo/demo/jni/SampleUtils.h:
 
 /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/stdio.h:
 

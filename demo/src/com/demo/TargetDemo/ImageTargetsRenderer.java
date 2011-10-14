@@ -37,15 +37,15 @@ public class ImageTargetsRenderer implements GLSurfaceView.Renderer{
         renderFrame();
     }
     
-    TargetDemo mainActivity;
-    public void setMainActivity(TargetDemo _mainActivity) {
-    	this.mainActivity = _mainActivity;
+    GUIManager guiManager;
+    public void setMainActivity(GUIManager _guiManager) {
+    	this.guiManager = _guiManager;
     }
     
     public void displayMessage(String text) {
     	Message message = new Message();
         message.what = 1;
         message.obj = text;
-        mainActivity.sendThreadSafeGUIMessage(message);
+        guiManager.sendThreadSafeGUIMessage(message);
     }
 }

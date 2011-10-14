@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <QCARConfig xsi:noNamespaceSchemaLocation="qcar_config.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Tracking>
-        <ImageTarget name="saber" size="300 210"/>
+        <ImageTarget name="expandables" size="270.270264 400"/>
+        <ImageTarget name="fatezero" size="400 244"/>
     </Tracking>
 </QCARConfig>
