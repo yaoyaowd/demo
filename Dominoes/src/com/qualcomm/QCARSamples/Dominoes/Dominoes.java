@@ -102,7 +102,6 @@ public class Dominoes extends Activity
     {   
         // Initialize with invalid value
         private int mProgressValue = -1;
-        
         protected Boolean doInBackground(Void... params)
         {
             QCAR.setInitParameters(Dominoes.this, mQCARFlags);

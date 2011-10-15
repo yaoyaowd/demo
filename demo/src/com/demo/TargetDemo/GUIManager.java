@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,22 +16,28 @@ public class GUIManager {
 	private Context applicationContext;
 	// A Handler for working with the gui from other threads
 	private Handler mainActivityHandler;
+	private Button refresh;
+	
+	public native void nativeRefresh();
 	
 	/** Initialize the GUIManager. */
-	public GUIManager(Context context)
+	public GUIManager(TargetDemo _demo, Context context)
 	{
 		overlayView = View.inflate(context, R.layout.information_layout, null);
-		tv = (TextView) overlayView.findViewById(R.id.debug_info);
 		applicationContext = context;
+		
+		refresh = (Button)overlayView.findViewById(R.id.refresh_button);
+		refresh.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				nativeRefresh();
+				}
+	        });
+	    
 		mainActivityHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-		    switch (msg.what) {
-		        case 1:
-		       		String text = (String) msg.obj;
-		       		tv.setText(text);
-		        	break;
-		    }
+	       		String text = (String) msg.obj;
+	       		Toast.makeText(applicationContext, text, Toast.LENGTH_LONG).show();
 		}
 		};
 	}

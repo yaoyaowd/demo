@@ -1,5 +1,0 @@
-package com.demo;
-
-public class ImageTargetsRenderer implements GLSurfaceView.Renderer{
-
-}

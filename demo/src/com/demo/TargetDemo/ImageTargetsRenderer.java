@@ -38,14 +38,29 @@ public class ImageTargetsRenderer implements GLSurfaceView.Renderer{
     }
     
     GUIManager guiManager;
-    public void setMainActivity(GUIManager _guiManager) {
+    TargetDemo mainActivity;
+    public void setMainActivity(TargetDemo _mainActivity, GUIManager _guiManager) {
+    	this.mainActivity = _mainActivity;
     	this.guiManager = _guiManager;
     }
     
     public void displayMessage(String text) {
+    	String str = text.substring(2);
+    	int id = Integer.valueOf(text.substring(0,1));
     	Message message = new Message();
-        message.what = 1;
-        message.obj = text;
-        guiManager.sendThreadSafeGUIMessage(message);
+        message.what = id;
+        message.obj = str;
+        
+        if (id == TargetDemo.GUIMESSAGE)
+        	guiManager.sendThreadSafeGUIMessage(message);
+        else 
+        if (id == TargetDemo.SHOWINFO)
+        	mainActivity.sendThreadSafeGUIMessage(message);
+        else if (id == TargetDemo.SHOWTIME)
+        	mainActivity.sendThreadSafeGUIMessage(message);
+        else if (id == TargetDemo.SHARE)
+        	mainActivity.sendThreadSafeGUIMessage(message);
+        else if (id == TargetDemo.GOTOYOUTUBE)
+        	mainActivity.sendThreadSafeGUIMessage(message);
     }
 }

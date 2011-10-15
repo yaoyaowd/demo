@@ -1,5 +1,5 @@
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/obj/local/armeabi/objs-debug/Dominoes/QCARBase.o: \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/QCARBase.cpp \
+/cygdrive/d/Train/demo/Dominoes/obj/local/armeabi/objs-debug/Dominoes/QCARBase.o: \
+ /cygdrive/d/Train/demo/Dominoes/jni/QCARBase.cpp \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/jni.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/android/log.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/stdio.h \
@@ -24,26 +24,26 @@
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/GLES2/gl2platform.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/KHR/khrplatform.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/GLES2/gl2ext.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/QCAR.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/System.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/UpdateCallback.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/CameraDevice.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/NonCopyable.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/VideoMode.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Renderer.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Matrices.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Vectors.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/State.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Frame.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/VideoBackgroundConfig.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Trackable.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Tool.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Tracker.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/CameraCalibration.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/SampleUtils.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/SampleMath.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/Texture.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/CubeShaders.h
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/QCAR.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/System.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/UpdateCallback.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/CameraDevice.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/NonCopyable.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/VideoMode.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Renderer.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Matrices.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Vectors.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/State.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Frame.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/VideoBackgroundConfig.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Trackable.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Tool.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Tracker.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/CameraCalibration.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/SampleUtils.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/SampleMath.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/Texture.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/CubeShaders.h
 
 /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/jni.h:
 
@@ -93,42 +93,42 @@
 
 /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/GLES2/gl2ext.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/QCAR.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/QCAR.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/System.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/System.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/UpdateCallback.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/UpdateCallback.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/CameraDevice.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/CameraDevice.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/NonCopyable.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/NonCopyable.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/VideoMode.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/VideoMode.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Renderer.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Renderer.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Matrices.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Matrices.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Vectors.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Vectors.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/State.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/State.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Frame.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Frame.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/VideoBackgroundConfig.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/VideoBackgroundConfig.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Trackable.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Trackable.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Tool.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Tool.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Tracker.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Tracker.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/CameraCalibration.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/CameraCalibration.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/SampleUtils.h:
+/cygdrive/d/Train/demo/Dominoes/jni/SampleUtils.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/SampleMath.h:
+/cygdrive/d/Train/demo/Dominoes/jni/SampleMath.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/Texture.h:
+/cygdrive/d/Train/demo/Dominoes/jni/Texture.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/CubeShaders.h:
+/cygdrive/d/Train/demo/Dominoes/jni/CubeShaders.h:

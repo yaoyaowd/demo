@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="onCrea" key="selection"/>
+		<item value="Demo" key="selection"/>
 		<list key="findhistory">
-			<item value="onCrea"/>
-			<item value="onPa"/>
-			<item value="onPu"/>
-			<item value="initAppl"/>
-			<item value="Context"/>
-			<item value="context"/>
-			<item value="onCreate"/>
-			<item value="renderFrame"/>
+			<item value="demo"/>
+			<item value="nativ"/>
+			<item value="list"/>
+			<item value="Listen"/>
+			<item value="listen"/>
+			<item value="setLis"/>
+			<item value="handler"/>
+			<item value="my"/>
 		</list>
 		<list key="replacehistory">
 		</list>

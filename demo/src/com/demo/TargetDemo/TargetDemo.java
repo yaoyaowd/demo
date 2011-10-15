@@ -3,10 +3,13 @@ package com.demo.TargetDemo;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
@@ -17,6 +20,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
 import java.util.Vector;
+
 import com.qualcomm.QCAR.QCAR;
 
 public class TargetDemo extends Activity {
@@ -94,7 +98,6 @@ public class TargetDemo extends Activity {
             // splash screen, progress bar, etc.
         }
 
-        
         protected void onPostExecute(Boolean result)
         {
             // Done initializing QCAR, proceed to next application
@@ -140,7 +143,7 @@ public class TargetDemo extends Activity {
                     logMessage = "Failed to initialize QCAR.";
                 }
                 // Show dialog box with error message:
-                dialogError.setMessage(logMessage);  
+                dialogError.setMessage(logMessage);
                 dialogError.show();
             }
         }
@@ -162,20 +165,27 @@ public class TargetDemo extends Activity {
             return (progressValue > 0);
         }
         
-        
         protected void onProgressUpdate(Integer... values)
         {
             // Do something with the progress value "values[0]", e.g. update
             // splash screen, progress bar, etc.
         }
         
-        
         protected void onPostExecute(Boolean result)
         {
             // Done loading the tracker, update application status: 
             updateApplicationStatus(APPSTATUS_INITED);
         }
-    }    
+    }
+    
+    private Handler activityHandler;
+    private long lastActionTime;
+    public final static int GUIMESSAGE = 0;
+    public final static int SHOWTIME = 1;
+    public final static int SHOWINFO = 2;
+    public final static int SHARE = 3;
+    public final static int GOTOYOUTUBE = 4;
+    
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -183,14 +193,70 @@ public class TargetDemo extends Activity {
         mTextures = new Vector<Texture>();
         loadTextures();
         mQCARFlags = getInitializationFlags();
+        lastActionTime = 0;
+        activityHandler = new Handler() {
+        	@Override
+    		public void handleMessage(Message msg) {
+        		String str = (String) msg.obj;
+        		long cur = System.currentTimeMillis();
+        		Log.v("demo", str);
+        		switch (msg.what) {
+        			case SHARE:
+        				if (cur - lastActionTime > 3000) {
+        					lastActionTime = cur;
+        					Intent intent3 = new Intent(TargetDemo.this, MotionPosterTweetActivity.class);
+        					Bundle bl3 = new Bundle();
+        					bl3.putString("name", str);
+        					intent3.putExtras(bl3);
+        					startActivity(intent3);
+        				}
+        				break;
+        			case SHOWTIME:
+        				if (cur - lastActionTime > 3000) {
+        					lastActionTime = cur;
+        					String[] items = str.split(":");
+        					Intent intent1 = new Intent(TargetDemo.this, TheaterMap.class);
+        					Bundle bl1 = new Bundle();
+        					bl1.putString("id", items[1]);
+        					bl1.putString("name", items[0]);
+        					intent1.putExtras(bl1);
+        					startActivity(intent1);
+        				}
+        				break;
+    		    	case SHOWINFO:
+    		        	if (cur - lastActionTime > 3000) {
+    		        		lastActionTime = cur;
+    		        		Intent intent2 = new Intent(TargetDemo.this, Information.class);
+    		        		Bundle bl2 = new Bundle();
+    		        		bl2.putString("url", "http://motion-poster.appspot.com/info?id=" + str);
+    		        		intent2.putExtras(bl2);
+    		        		startActivity(intent2);
+    		        	}
+    		    		break;
+    		        case GOTOYOUTUBE:
+    		        	if (cur - lastActionTime > 3000) {
+    		        		lastActionTime = cur;
+    		        		startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(str)));
+    		        	}
+    		        	break;
+    		    }
+    		}
+        };
         updateApplicationStatus(APPSTATUS_INIT_APP);
     }
+    
+    public void sendThreadSafeGUIMessage(Message message) {
+    	activityHandler.sendMessage(message);
+	}
 
     /** We want to load specific textures from the APK, which we will later
     use for rendering. */
     private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk("button.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("orange-button.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("green-button.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("blue-button.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("purple-button.png", getAssets()));
     }
 
     /** Configure QCAR with the desired version of OpenGL ES. */
@@ -369,7 +435,7 @@ public class TargetDemo extends Activity {
     /** Initialize application GUI elements that are not related to AR. */
     private void initApplication()
     {
-        int screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+    	int screenOrientation = 1;
         // Apply screen orientation
         setRequestedOrientation(screenOrientation);
         // Pass on screen orientation info to native code
@@ -400,8 +466,8 @@ public class TargetDemo extends Activity {
         mGlView.init(mQCARFlags, translucent, depthSize, stencilSize);
         mRenderer = new ImageTargetsRenderer();
         mGlView.setRenderer(mRenderer);
-        mGUIManager = new GUIManager(getApplicationContext());
-        mRenderer.setMainActivity(mGUIManager);
+        mGUIManager = new GUIManager(this, getApplicationContext());
+        mRenderer.setMainActivity(this, mGUIManager);
     }
 
     /** Invoked the first time when the options menu is displayed to give

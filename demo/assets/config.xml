@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <QCARConfig xsi:noNamespaceSchemaLocation="qcar_config.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Tracking>
-        <ImageTarget name="expandables" size="270.270264 400"/>
-        <ImageTarget name="fatezero" size="400 244"/>
+        <ImageTarget name="LionKing" size="269.828735 400"/>
+        <ImageTarget name="TheExpendables" size="400 400"/>
+        <ImageTarget name="RealSteel" size="269.757629 400"/>
+        <ImageTarget name="moneyball" size="270.042206 400"/>
+        <ImageTarget name="courageous" size="272.921112 400"/>
+        <ImageTarget name="abduction" size="269.757629 400"/>
     </Tracking>
 </QCARConfig>

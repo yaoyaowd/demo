@@ -1,10 +1,10 @@
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/obj/local/armeabi-v7a/objs-debug/Dominoes/SampleMath.o: \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/SampleMath.cpp \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/SampleMath.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Tool.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/System.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Matrices.h \
- /cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Vectors.h \
+/cygdrive/d/Train/demo/Dominoes/obj/local/armeabi-v7a/objs-debug/Dominoes/SampleMath.o: \
+ /cygdrive/d/Train/demo/Dominoes/jni/SampleMath.cpp \
+ /cygdrive/d/Train/demo/Dominoes/jni/SampleMath.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Tool.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/System.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Matrices.h \
+ /cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Vectors.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/math.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/sys/cdefs.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -33,15 +33,15 @@
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/strings.h \
  /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/memory.h
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/SampleMath.h:
+/cygdrive/d/Train/demo/Dominoes/jni/SampleMath.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Tool.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Tool.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/System.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/System.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Matrices.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Matrices.h:
 
-/cygdrive/d/Train/Development/qcar-android-1-0-6/samples/Dominoes/jni/../../../build/include/QCAR/Vectors.h:
+/cygdrive/d/Train/demo/Dominoes/jni/../../build/include/QCAR/Vectors.h:
 
 /cygdrive/d/Train/Development/Android/android-ndk-r6b/platforms/android-5/arch-arm/usr/include/math.h:
 

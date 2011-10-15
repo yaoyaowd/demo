@@ -127,8 +127,8 @@ Java_com_qualcomm_QCARSamples_Dominoes_DominoesRenderer_renderFrame(JNIEnv* , jo
         
         // If this is our first time seeing the target, display a tip
         if (!displayedMessage) {
-            displayMessage("Touch and drag slowly to drop a row of dominoes.");
-            displayedMessage = true;
+            //displayMessage("Touch and drag slowly to drop a row of dominoes.");
+            //displayedMessage = true;
         }
     }
     
@@ -358,12 +358,15 @@ handleTouches()
 {
     // If there is a new tap that we haven't handled yet:
     if (touch1.didTap && touch1.startTime > lastTapTime) {
-        
         // Find the start and end points in world space for the tap
         // These will lie on the near and far plane and can be used for picking
         QCAR::Vec3F intersection, lineStart, lineEnd;
         projectScreenPointToPlane(QCAR::Vec2F(touch1.tapX, touch1.tapY), QCAR::Vec3F(0, 0, 0), QCAR::Vec3F(0, 0, 1), intersection, lineStart, lineEnd);
-        
+
+	char cVal[128]; sprintf(cVal,"touch: %0.6f, %0.6f, %0.6f, %0.6f",touch1.tapX, touch1.tapY, intersection.data[0], intersection.data[1]);
+	displayedMessage = false;
+	displayMessage(cVal);
+
         Domino* domino;
         Domino* selected = NULL;
         float dist;
@@ -603,6 +606,9 @@ void VirtualButton_UpdateCallback::QCAR_onUpdate(QCAR::State& state)
             float top = vbDomino->position.data[1] + kVirtualButtonScale;
             float bottom = vbDomino->position.data[1] - kVirtualButtonScale;
             
+	    //char cVal[128]; sprintf(cVal,"%0.6f, %0.6f, %0.6f, %0.6f",left, right, top, bottom);
+	    //displayedMessage = false;
+	    //displayMessage(cVal);
             QCAR::Rectangle vbRectangle(left, top, right, bottom);
             
             // Move the virtual button
